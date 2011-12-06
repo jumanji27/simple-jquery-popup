@@ -1,4 +1,4 @@
-.popup-anch { width:100%; position:relative; z-index:1; float:left; text-align:center; font-size:18px; margin:80px 0 0 0; }
+﻿.popup-anch { width:100%; position:relative; z-index:1; float:left; text-align:center; font-size:18px; margin:80px 0 0 0; }
 .popup-anch a { color:#000; }
 .popup-anch a:hover { text-decoration:none; }
 .popup-anch-bottom { margin:1500px 0 50px 0; }

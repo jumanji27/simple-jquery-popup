@@ -1,4 +1,4 @@
-1.1 kbyte jquery popup plagin
+1.1 kbyte jquery popup plugin
 
 for call:
 

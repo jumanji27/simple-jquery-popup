@@ -1,4 +1,4 @@
-﻿/* Блог Никиты Лебедева, http://lebedev-design.ru/ — http://blog.lebedev-design.ru/example/jquery-simple-popup/ */
+﻿/* Блог Никиты Лебедева, lebedev-design.ru — blog.lebedev-design.ru/simple-jquery-popup */
 (function($) {
 	$.fn.simplePopup = function() {
 		return this.each(function() {

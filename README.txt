@@ -2,6 +2,6 @@
 
 for call:
 
-$(document).ready(function() {
-	$(".popup-anch a").simplePopup();
+$(function() {
+	$(".popup_anch a").simplePopup();
 });

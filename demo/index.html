@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head lang="ru">
-	<meta charset="utf-8">
-	<title>Простое всплывающее окно на jquery | Блог Никиты Лебедева | Сохранить</title>
-	<meta content="Блог дизайнера и веб-разработчика Никиты Лебедева" name="description">
-	<link rel="icon" href="http://lebedev-design.ru/images/favicon-blog.ico" type="image/x-icon">
-	<link rel="stylesheet" href="http://lebedev-design.ru/css/default-blog.css" type="text/css">
-	<link rel="stylesheet" href="css/jquery.popup.css" type="text/css">
-	<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
-	<script type="text/javascript" src="http://lebedev-design.ru/js/ga-blog.js"></script>
-	<script type="text/javascript" src="js/jquery.popup.js"></script>
-	<script type="text/javascript">
-	$(function() {
-		$(".popup_anch a").simplePopup();
-	});
-	</script>
+  <meta charset="utf-8">
+  <title>Простое всплывающее окно на jquery | Блог Никиты Лебедева</title>
+  <link rel="stylesheet" href="css/jquery.popup.css" type="text/css">
+  <script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+  <script type="text/javascript" src="js/jquery.popup.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $(".popup_anch a").simplePopup();
+    });
+  </script>
 </head>
 <body>
 
-	<div class="popup_body"></div>
-	<div class="popup">
-		<a href="#" class="popup_close" title="Закрыть"></a>
-		<div>Всплывающее окно</div>
-	</div>
+  <div class="popup_body"></div>
+  <div class="popup">
+    <a href="#" class="popup_close" title="Закрыть"></a>
+    <div>Всплывающее окно</div>
+  </div>
 
-	<div class="popup_anch"><a href="#">Нажмите</a>, чтобы вызвать всплывающее окно</div>
-	<div class="popup_anch popup_anch_bottom"><a href="#">Нажмите</a>, чтобы вызвать нижнее всплывающее окно</div>
+  <div class="popup_anch"><a href="#">Нажмите</a>, чтобы вызвать всплывающее окно</div>
+  <div class="popup_anch popup_anch_bottom"><a href="#">Нажмите</a>, чтобы вызвать нижнее всплывающее окно</div>
 
-	<a href="https://github.com/nazz-nazz/simple-jquery-popup" class="ongithub"></a>
+  <a href="https://github.com/nazz-nazz/simple-jquery-popup" class="ongithub"></a>
 </body>
 </html>

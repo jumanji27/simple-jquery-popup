@@ -4,8 +4,8 @@
 
     // метод центирования
     $.fn.center = function() {
-      var popupMarginLeft = -this.width()/2;
-      return this.css("margin-left", popupMarginLeft);
+      var marginLeft = -this.width()/2;
+      return this.css("margin-left", marginLeft);
     }
     // Общая функция скрытия
     function hide() {

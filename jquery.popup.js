@@ -1,4 +1,4 @@
-﻿// Блог Никиты Лебедева, lebedev-design.ru — blog.lebedev-design.ru/simple-jquery-popup
+﻿// Блог Никиты Лебедева, lebedev-design.ru/simple-jquery-popup
 (function($) {
   $.fn.simplePopup = function() {
 

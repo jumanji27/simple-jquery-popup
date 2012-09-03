@@ -9,16 +9,16 @@
     }
     // Общая функция скрытия
     function hide() {
-      $(".popup_body, .popup").fadeOut(300, 0);
+      $(".p_body, .popup").fadeOut(300, 0);
     }
     // Закрытие по кнопке esc
-    $("body").keyup(function(e) {
+    $(window).keyup(function(e) {
       if (e.keyCode == 27) {
         hide();
       }
     });
     // Закрытие по фону и по крестику
-    $(".popup_body, .popup_close").click(function() {
+    $(".p_body, .p_close").click(function() {
       hide();
       return false;
     });
@@ -26,7 +26,7 @@
     return this.each(function() {
 
       $(this).click(function() {
-        $(".popup_body").fadeTo(300, 0.7);
+        $(".p_body").fadeTo(300, 0.7);
         $(".popup").center().fadeTo(300, 1);
         return false;
       });

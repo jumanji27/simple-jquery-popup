@@ -2,12 +2,16 @@
   display:none; position:fixed; top:60px; left:50%; background:#fff; width:460px; height:270px;
   box-shadow:4px 4px 30px #130507; z-index:2;
 }
-  .popup_anch {
+  .popup div { width:100%; text-align:center; padding:50px 0 0 0; font-size:23px; padding:110px 0 0; }
+  .p_anch {
     width:100%; position:relative; z-index:1; float:left; text-align:center; font-size:18px; margin:80px 0 0 0;
   }
-  .popup_anch a { color:#000; }
-  .popup_anch a:hover { text-decoration:none; }
-  .popup_anch_bottom { margin:1500px 0 50px 0; }
-  .popup div { width:100%; text-align:center; padding:50px 0 0 0; font-size:23px; padding:110px 0 0; }
-  .popup_close { float:right; width:15px; height:14px; margin:11px 10px 0 0; background:url(../img/popup_close.png); }
-  .popup_body { display:none; background:#000; left:0; top:0; position:fixed; width:100%; height:100%; opacity:0.5; }
+  .p_anch a { color:#000; }
+  .p_anch a:hover { text-decoration:none; }
+  .p_anch_bottom { margin:1500px 0 50px 0; }
+  .p_close { float:right; width:15px; height:14px; margin:11px 10px 0 0; background:url(../img/popup_close.png); }
+  .p_body { display:none; background:#000; left:0; top:0; position:fixed; width:100%; height:100%; opacity:0.5; }
+  .p_github {
+    position:fixed; background:url(../img/p_github.png);
+    width:99px; height:99px; top:0; right:0;
+  }

@@ -1,7 +1,7 @@
-### 1.1 kbyte jquery popup plugin
+# 1.1 kbyte jquery popup plugin
 
 for call:
 
     $(function() {
-    	$(".popup_anch a").simplePopup();
+      $(".p_anch a").simplePopup();
     });

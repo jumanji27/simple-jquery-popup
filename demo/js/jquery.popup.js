@@ -1,4 +1,4 @@
-﻿// Блог Никиты Лебедева, lebedev-design.ru/simple-jquery-popup
+﻿// Блог Никиты Лебедева, nazz.me/simple-jquery-popup
 (function($) {
   $.fn.simplePopup = function() {
 
@@ -18,14 +18,14 @@
       }
     });
     // Закрытие по фону и по крестику
-    $(".p_body, .p_close").click(function() {
+    $(".p_body, .p_close").on("click", function() {
       hide();
       return false;
     });
 
     return this.each(function() {
 
-      $(this).click(function() {
+      $(this).on("click", function() {
         $(".p_body").fadeTo(300, 0.7);
         $(".popup").center().fadeTo(300, 1);
         return false;

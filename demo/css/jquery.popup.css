@@ -11,7 +11,10 @@
   .p_anch_bottom { margin:1500px 0 50px 0; }
   .p_close { float:right; width:15px; height:14px; margin:11px 10px 0 0; background:url(../img/popup_close.png); }
   .p_body { display:none; background:#000; left:0; top:0; position:fixed; width:100%; height:100%; opacity:0.5; }
-  .p_github {
-    position:fixed; background:url(../img/p_github.png);
-    width:99px; height:99px; top:0; right:0;
-  }
+
+
+
+.github {
+  position:fixed; background:url(../img/github.png);
+  width:99px; height:99px; top:0; right:0;
+}

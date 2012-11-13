@@ -2,7 +2,7 @@
 (function($) {
   $.fn.simplePopup = function() {
 
-    // метод центирования
+    // Метод центирования
     $.fn.center = function() {
       var marginLeft = -this.width()/2;
       return this.css("margin-left", marginLeft);

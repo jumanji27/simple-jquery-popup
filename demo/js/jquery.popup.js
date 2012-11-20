@@ -51,7 +51,7 @@
 
       },
 
-      // Метод центирования
+      // Метод центрирования
       centering: function( self ) {
         var marginLeft = -self.width()/2;
         return self.css("margin-left", marginLeft);

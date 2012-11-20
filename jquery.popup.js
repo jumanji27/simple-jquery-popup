@@ -2,35 +2,88 @@
 (function($) {
   $.fn.simplePopup = function() {
 
-    // Метод центирования
-    $.fn.center = function() {
-      var marginLeft = -this.width()/2;
-      return this.css("margin-left", marginLeft);
-    }
-    // Общая функция скрытия
-    function hide() {
-      $(".p_body, .popup").fadeOut(300, 0);
-    }
-    // Закрытие по кнопке esc
-    $(window).keyup(function(e) {
-      if (e.keyCode == 27) {
-        hide();
+    var simplePopup = {
+
+      // Обработчики
+      initialize: function( self ) {
+
+        var popup = $(".js__popup");
+        var body = $(".js__p_body");
+        var close = $(".js__p_close");
+        var hash = "popup";
+
+        var string = self[0].className;
+        var name = string.replace("js__p_", "");
+
+        // Переопределим переменные, если есть дополнительный попап
+        if ( !(name === "start") ) {
+          name = name.replace("_start", "_popup");
+          popup = $( ".js__" + name );
+          hash = name;
+        }
+
+        // Вызов при клике
+        self.on("click", function() {
+          simplePopup.show( popup, body, hash );
+          return false;
+        });
+
+        $(window).on("load", function() {
+          simplePopup.hash( popup, body, hash );
+        });
+
+        // Закрытие
+        body.on("click", function() {
+          simplePopup.hide( popup, body );
+        });
+
+        close.on("click", function() {
+          simplePopup.hide( popup, body );
+          return false;
+        });
+
+        // Закрытие по кнопке esc
+        $(window).keyup(function(e) {
+          if (e.keyCode === 27) {
+            simplePopup.hide( popup, body );
+          }
+        });
+
+      },
+
+      // Метод центирования
+      centering: function( self ) {
+        var marginLeft = -self.width()/2;
+        return self.css("margin-left", marginLeft);
+      },
+
+      // Общая функция показа
+      show: function( popup, body, hash ) {
+        simplePopup.centering( popup );
+        body.removeClass("js__fadeout");
+        popup.removeClass("js__slide_top");
+        window.location.hash = hash;
+      },
+
+      // Общая функция скрытия
+      hide: function( popup, body ) {
+        popup.addClass("js__slide_top");
+        body.addClass("js__fadeout");
+        window.location.hash = "";
+      },
+
+      // Мониторим хэш в урле
+      hash: function( popup, body, hash ) {
+        if ( window.location.hash === hash ) {
+          simplePopup.show( popup, body, hash );
+        }
       }
-    });
-    // Закрытие по фону и по крестику
-    $(".p_body, .p_close").on("click", function() {
-      hide();
-      return false;
-    });
+
+    }
 
     return this.each(function() {
-
-      $(this).on("click", function() {
-        $(".p_body").fadeTo(300, 0.7);
-        $(".popup").center().fadeTo(300, 1);
-        return false;
-      });
-
+      that = $(this);
+      simplePopup.initialize( that );
     });
 
   }

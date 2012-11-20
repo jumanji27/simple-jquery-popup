@@ -3,27 +3,46 @@
 <head lang="ru">
   <meta charset="utf-8">
   <title>Простое всплывающее окно на jquery | Блог Никиты Лебедева</title>
+
   <link rel="stylesheet" href="css/jquery.popup.css" type="text/css">
+
   <script type="text/javascript" src="js/jquery-1.7.min.js"></script>
   <script type="text/javascript" src="js/jquery.popup.js"></script>
+
   <script type="text/javascript">
     $(function() {
-      $(".p_anch a").simplePopup();
+      $(".js__p_start, .js__p_another_start").simplePopup();
     });
   </script>
+
 </head>
 <body>
 
-  <div class="p_body"></div>
-  <div class="popup">
-    <a href="#" class="p_close" title="Закрыть"></a>
-    <div>Всплывающее окно</div>
+  <div class="p_anch">
+    <a href="#" class="js__p_start">Нажмите</a>, чтобы вызвать всплывающее окно
   </div>
 
-  <div class="p_anch"><a href="#">Нажмите</a>, чтобы вызвать всплывающее окно</div>
-  <div class="p_anch p_anch_bottom"><a href="#">Нажмите</a>, чтобы вызвать нижнее всплывающее окно</div>
+  <div class="p_anch">
+    <a href="#" class="js__p_another_start">Нажмите</a>, чтобы вызвать еще одно всплывающее окно
+  </div>
 
-  <a href="https://github.com/nazz-nazz/simple_jquery_popup" class="github" title="Страничка на гитхабе"></a>
+  <div class="p_anch p_anch_bottom">
+    <a href="#" class="js__p_start">Нажмите</a>, чтобы вызвать нижнее всплывающее окно
+  </div>
+
+  <div class="p_body js__p_body js__fadeout"></div>
+
+  <div class="popup js__popup js__slide_top">
+    <a href="#" class="p_close js__p_close" title="Закрыть"></a>
+    <div class="p_content">Всплывающее окно</div>
+  </div>
+
+  <div class="popup js__another_popup js__slide_top">
+    <a href="#" class="p_close js__p_close" title="Закрыть"></a>
+    <div class="p_content">Это уже другое всплывающее окно</div>
+  </div>
+
+  <a href="https://github.com/nazz-nazz/simple_jquery_popup" class="github" title="Github репозиторий"></a>
 
 </body>
 </html>

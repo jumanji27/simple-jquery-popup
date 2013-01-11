@@ -19,6 +19,7 @@
         if ( !(name === "start") ) {
           name = name.replace("_start", "_popup");
           popup = $( ".js__" + name );
+          name = name.replace("_", "-");
           hash = "#" + name;
         }
 
@@ -79,7 +80,7 @@
         }
       }
 
-    }
+    };
 
     // Циклом ищем что вызвано
     return this.each(function() {
@@ -87,5 +88,5 @@
       simplePopup.initialize( that );
     });
 
-  }
+  };
 })(jQuery);

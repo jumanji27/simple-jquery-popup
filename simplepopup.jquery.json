@@ -1,7 +1,7 @@
 {
-  "name": "Simple jquery popup",
+  "name": "simplepopup",
   "title": "Simple jquery popup",
-  "description": "A lightweight and simple jquery and transition popup plugin",
+  "description": "A lightweight and simple transition popup plugin",
   "keywords": [
     "ui",
     "popup",

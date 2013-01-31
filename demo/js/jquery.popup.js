@@ -5,7 +5,7 @@
     var simplePopup = {
 
       // Обработчики
-      initialize: function( self ) {
+      initialize: function(self) {
 
         var popup = $(".js__popup");
         var body = $(".js__p_body");
@@ -18,65 +18,65 @@
         // Переопределим переменные, если есть дополнительный попап
         if ( !(name === "start") ) {
           name = name.replace("_start", "_popup");
-          popup = $( ".js__" + name );
+          popup = $(".js__" + name);
           name = name.replace("_", "-");
           hash = "#" + name;
-        }
+        };
 
         // Вызов при клике
         self.on("click", function() {
-          simplePopup.show( popup, body, hash );
+          simplePopup.show(popup, body, hash);
           return false;
         });
 
         $(window).on("load", function() {
-          simplePopup.hash( popup, body, hash );
+          simplePopup.hash(popup, body, hash);
         });
 
         // Закрытие
         body.on("click", function() {
-          simplePopup.hide( popup, body );
+          simplePopup.hide(popup, body);
         });
 
         close.on("click", function() {
-          simplePopup.hide( popup, body );
+          simplePopup.hide(popup, body);
           return false;
         });
 
         // Закрытие по кнопке esc
         $(window).keyup(function(e) {
           if (e.keyCode === 27) {
-            simplePopup.hide( popup, body );
+            simplePopup.hide(popup, body);
           }
         });
 
       },
 
       // Метод центрирования
-      centering: function( self ) {
+      centering: function(self) {
         var marginLeft = -self.width()/2;
         return self.css("margin-left", marginLeft);
       },
 
       // Общая функция показа
-      show: function( popup, body, hash ) {
-        simplePopup.centering( popup );
+      show: function(popup, body, hash) {
+        simplePopup.centering(popup);
         body.removeClass("js__fadeout");
         popup.removeClass("js__slide_top");
         window.location.hash = hash;
       },
 
       // Общая функция скрытия
-      hide: function( popup, body ) {
+      hide: function(popup, body) {
         popup.addClass("js__slide_top");
         body.addClass("js__fadeout");
         window.location.hash = "#";
       },
 
       // Мониторим хэш в урле
-      hash: function( popup, body, hash ) {
-        if ( window.location.hash === hash ) {
-          simplePopup.show( popup, body, hash );
+      hash: function(popup, body, hash) {
+        if (window.location.hash === hash) {
+          simplePopup.show(popup, body, hash);
         }
       }
 
@@ -84,8 +84,8 @@
 
     // Циклом ищем что вызвано
     return this.each(function() {
-      that = $(this);
-      simplePopup.initialize( that );
+      self = $(this);
+      simplePopup.initialize(self);
     });
 
   };

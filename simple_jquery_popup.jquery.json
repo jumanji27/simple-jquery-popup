@@ -1,0 +1,29 @@
+{
+  "name": "Simple jquery popup",
+  "title": "Simple jquery popup",
+  "description": "A lightweight and simple jquery and transition popup plugin",
+  "keywords": [
+    "ui",
+    "popup",
+    "html5",
+    "transition"
+  ],
+  "version": "1.1.0",
+  "author": {
+    "name": "Nikita Lebedev",
+    "url": "http://nazz.me",
+    "email": "niklebdes@gmail.com"
+  },
+  "licenses": [
+    {
+      "type": "Creative commons",
+      "url": "http://creativecommons.org/licenses/by-nc-nd/3.0/"
+    }
+  ],
+  "homepage": "http://nazz.me/simple-jquery-popup/",
+  "demo": "http://nazz.me/example/simple-jquery-popup/",
+  "download": "http://nazz.me/example/simple-jquery-popup/zip/simple-jquery-popup.zip",
+  "dependencies": {
+    "jquery": ">=1.3.2"
+  }
+}

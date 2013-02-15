@@ -84,7 +84,7 @@
 
     // Циклом ищем что вызвано
     return this.each(function() {
-      self = $(this);
+      var self = $(this);
       simplePopup.initialize(self);
     });
 

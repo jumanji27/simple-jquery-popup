@@ -10,7 +10,7 @@
         var popup = $(".js__popup");
         var body = $(".js__p_body");
         var close = $(".js__p_close");
-        var hash = "#popup";
+        var hash = "#/popup";
 
         var string = self[0].className;
         var name = string.replace("js__p_", "");
@@ -20,7 +20,7 @@
           name = name.replace("_start", "_popup");
           popup = $(".js__" + name);
           name = name.replace("_", "-");
-          hash = "#" + name;
+          hash = "#/" + name;
         };
 
         // Вызов при клике
@@ -70,7 +70,7 @@
       hide: function(popup, body) {
         popup.addClass("js__slide_top");
         body.addClass("js__fadeout");
-        window.location.hash = "#";
+        window.location.hash = "#/";
       },
 
       // Мониторим хэш в урле

@@ -1,4 +1,4 @@
-# simple jquery popup plugin
+# Simple jquery popup plugin
 
 for call:
 

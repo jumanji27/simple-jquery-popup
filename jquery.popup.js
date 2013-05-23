@@ -1,10 +1,10 @@
-﻿// Блог Никиты Лебедева, nazz.me/simple-jquery-popup
+﻿// Nikita Lebedev's blog, nazz.me/simple-jquery-popup
 (function($) {
   $.fn.simplePopup = function() {
 
     var simplePopup = {
 
-      // Обработчики
+      // Events
       initialize: function(self) {
 
         var popup = $(".js__popup");
@@ -15,7 +15,7 @@
         var string = self[0].className;
         var name = string.replace("js__p_", "");
 
-        // Переопределим переменные, если есть дополнительный попап
+        // We redefine the variables if there is an additional popap
         if ( !(name === "start") ) {
           name = name.replace("_start", "_popup");
           popup = $(".js__" + name);
@@ -23,7 +23,7 @@
           hash = "#/" + name;
         };
 
-        // Вызов при клике
+        // Call when have click
         self.on("click", function() {
           simplePopup.show(popup, body, hash);
           return false;
@@ -33,7 +33,7 @@
           simplePopup.hash(popup, body, hash);
         });
 
-        // Закрытие
+        // Close
         body.on("click", function() {
           simplePopup.hide(popup, body);
         });
@@ -43,7 +43,7 @@
           return false;
         });
 
-        // Закрытие по кнопке esc
+        // Closure of the button "esc"
         $(window).keyup(function(e) {
           if (e.keyCode === 27) {
             simplePopup.hide(popup, body);
@@ -52,13 +52,13 @@
 
       },
 
-      // Метод центрирования
+      // Centering method
       centering: function(self) {
         var marginLeft = -self.width()/2;
         return self.css("margin-left", marginLeft);
       },
 
-      // Общая функция показа
+      // The overall function of the show
       show: function(popup, body, hash) {
         simplePopup.centering(popup);
         body.removeClass("js__fadeout");
@@ -66,14 +66,14 @@
         window.location.hash = hash;
       },
 
-      // Общая функция скрытия
+      // The overall function of the hide
       hide: function(popup, body) {
         popup.addClass("js__slide_top");
         body.addClass("js__fadeout");
         window.location.hash = "#/";
       },
 
-      // Мониторим хэш в урле
+      // Watch hash in URL
       hash: function(popup, body, hash) {
         if (window.location.hash === hash) {
           simplePopup.show(popup, body, hash);
@@ -82,7 +82,7 @@
 
     };
 
-    // Циклом ищем что вызвано
+    // In loop looking for what is called
     return this.each(function() {
       var self = $(this);
       simplePopup.initialize(self);

@@ -48,7 +48,7 @@
           return false;
         });
 
-        // Closure of the button "esc"
+        // Closure of the button "Esc"
         $(window).keyup(function(e) {
           if (e.keyCode === 27) {
             simplePopup.hide(popup, body);

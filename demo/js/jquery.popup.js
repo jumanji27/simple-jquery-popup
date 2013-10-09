@@ -1,8 +1,13 @@
 ﻿// Nikita Lebedev's blog, nazz.me/simple-jquery-popup
 (function($) {
-  $.fn.simplePopup = function() {
+  $.fn.simplePopup = function(event) {
 
     var simplePopup = {
+
+      settings: {
+        hashtag: "#/",
+        event: event || "click"
+      },
 
       // Events
       initialize: function(self) {
@@ -10,7 +15,7 @@
         var popup = $(".js__popup");
         var body = $(".js__p_body");
         var close = $(".js__p_close");
-        var hash = "#/popup";
+        var routePopup = simplePopup.settings.hashtag + "popup";
 
         var string = self[0].className;
         var name = string.replace("js__p_", "");
@@ -20,17 +25,17 @@
           name = name.replace("_start", "_popup");
           popup = $(".js__" + name);
           name = name.replace("_", "-");
-          hash = "#/" + name;
+          routePopup = simplePopup.settings.hashtag + name;
         };
 
-        // Call when have click
-        self.on("click", function() {
-          simplePopup.show(popup, body, hash);
+        // Call when have event
+        self.on(simplePopup.settings.event, function() {
+          simplePopup.show(popup, body, routePopup);
           return false;
         });
 
         $(window).on("load", function() {
-          simplePopup.hash(popup, body, hash);
+          simplePopup.hash(popup, body, routePopup);
         });
 
         // Close
@@ -59,24 +64,24 @@
       },
 
       // The overall function of the show
-      show: function(popup, body, hash) {
+      show: function(popup, body, routePopup) {
         simplePopup.centering(popup);
         body.removeClass("js__fadeout");
         popup.removeClass("js__slide_top");
-        window.location.hash = hash;
+        window.location.hash = routePopup;
       },
 
       // The overall function of the hide
       hide: function(popup, body) {
         popup.addClass("js__slide_top");
         body.addClass("js__fadeout");
-        window.location.hash = "#/";
+        window.location.hash = simplePopup.settings.hashtag;
       },
 
       // Watch hash in URL
-      hash: function(popup, body, hash) {
-        if (window.location.hash === hash) {
-          simplePopup.show(popup, body, hash);
+      hash: function(popup, body, routePopup) {
+        if (window.location.hash === routePopup) {
+          simplePopup.show(popup, body, routePopup);
         }
       }
 
@@ -90,3 +95,4 @@
 
   };
 })(jQuery);
+

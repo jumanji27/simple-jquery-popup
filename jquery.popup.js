@@ -6,6 +6,7 @@
 
       settings: {
         hashtag: "#/",
+        url: "popup",
         event: event || "click"
       },
 
@@ -15,17 +16,18 @@
         var popup = $(".js__popup");
         var body = $(".js__p_body");
         var close = $(".js__p_close");
-        var routePopup = simplePopup.settings.hashtag + "popup";
+        var routePopup = simplePopup.settings.hashtag + simplePopup.settings.url;
 
         var string = self[0].className;
         var name = string.replace("js__p_", "");
 
         // We redefine the variables if there is an additional popap
         if ( !(name === "start") ) {
+          simplePopup.settings.url = "another_popup";
+
           name = name.replace("_start", "_popup");
           popup = $(".js__" + name);
-          name = name.replace("_", "-");
-          routePopup = simplePopup.settings.hashtag + name;
+          routePopup = simplePopup.settings.hashtag + simplePopup.settings.url;
         };
 
         // Call when have event

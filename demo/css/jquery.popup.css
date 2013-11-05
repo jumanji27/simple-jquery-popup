@@ -17,15 +17,15 @@
   .p_anch a { color:#000; }
   .p_anch a:hover { text-decoration:none; }
   .p_anch_bottom { margin:1500px 0 0 0; padding:0 0 50px 0; }
-  .p_close { float:right; width:15px; height:14px; padding:15px 14px 0 0; }
+  .p_close { position:absolute; top:0; right:0; width:16px; height:12px; padding:15px 11px 0 0; }
+  .p_close span { display:block; width:18px; height:5px; background:#333; }
   .p_close span:first-child {
-    display:block; width:18px; height:5px; background:#333;
       -ms-transform:rotate(45deg);
       -webkit-transform:rotate(45deg);
     transform:rotate(45deg);
   }
   .p_close span:last-child {
-    display:block; width:18px; height:5px; background:#333; margin:-5px 0 0;
+    margin:-5px 0 0;
       -ms-transform:rotate(135deg);
       -webkit-transform:rotate(135deg);
     transform:rotate(135deg);

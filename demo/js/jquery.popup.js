@@ -25,7 +25,6 @@
         if ( !(name === "start") ) {
           var new_url = "another_popup";
 
-          console.log("xyu")
           name = name.replace("_start", "_popup");
           popup = $(".js__" + name);
           routePopup = simplePopup.settings.hashtag + new_url;

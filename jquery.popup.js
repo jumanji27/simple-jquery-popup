@@ -23,11 +23,12 @@
 
         // We redefine the variables if there is an additional popap
         if ( !(name === "start") ) {
-          simplePopup.settings.url = "another_popup";
+          var new_url = "another_popup";
 
+          console.log("xyu")
           name = name.replace("_start", "_popup");
           popup = $(".js__" + name);
-          routePopup = simplePopup.settings.hashtag + simplePopup.settings.url;
+          routePopup = simplePopup.settings.hashtag + new_url;
         };
 
         // Call when have event

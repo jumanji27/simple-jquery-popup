@@ -70,19 +70,19 @@
         simplePopup.centering(popup);
         body.removeClass("js__fadeout");
         popup.removeClass("js__slide_top");
-        window.location.hash = routePopup;
+        location.hash = routePopup;
       },
 
       // The overall function of the hide
       hide: function(popup, body) {
         popup.addClass("js__slide_top");
         body.addClass("js__fadeout");
-        window.location.hash = simplePopup.settings.hashtag;
+        location.hash = simplePopup.settings.hashtag;
       },
 
       // Watch hash in URL
       hash: function(popup, body, routePopup) {
-        if (window.location.hash === routePopup) {
+        if (location.hash === routePopup) {
           simplePopup.show(popup, body, routePopup);
         }
       }

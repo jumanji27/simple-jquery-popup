@@ -17,9 +17,18 @@
   .p_anch a { color:#000; }
   .p_anch a:hover { text-decoration:none; }
   .p_anch_bottom { margin:1500px 0 0 0; padding:0 0 50px 0; }
-  .p_close {
-    float:right; width:15px; height:14px; margin:11px 10px 0 0;
-    background:url(../img/popup_close.png);
+  .p_close { float:right; width:15px; height:14px; padding:15px 14px 0 0; }
+  .p_close span:first-child {
+    display:block; width:18px; height:5px; background:#333;
+      -ms-transform:rotate(45deg);
+      -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+  }
+  .p_close span:last-child {
+    display:block; width:18px; height:5px; background:#333; margin:-5px 0 0;
+      -ms-transform:rotate(135deg);
+      -webkit-transform:rotate(135deg);
+    transform:rotate(135deg);
   }
   .p_body {
     background:#000; left:0; top:0; position:fixed; width:100%; height:100%; opacity:0.7;

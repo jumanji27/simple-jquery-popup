@@ -13,22 +13,24 @@
       // Events
       initialize: function(self) {
 
-        var popup = $(".js__popup");
-        var body = $(".js__p_body");
-        var close = $(".js__p_close");
-        var routePopup = simplePopup.settings.hashtag + simplePopup.settings.url;
+        var popup = $(".js__popup"),
+            body = $(".js__p_body"),
+            close = $(".js__p_close"),
+            routePopup = simplePopup.settings.hashtag + simplePopup.settings.url,
+            classes = self[0].className.split(' '),
+            popupName = "popup";
 
-        var string = self[0].className;
-        var name = string.replace("js__p_", "");
-
-        // We redefine the variables if there is an additional popap
-        if ( !(name === "start") ) {
-          var new_url = "another_popup";
-
-          name = name.replace("_start", "_popup");
-          popup = $(".js__" + name);
-          routePopup = simplePopup.settings.hashtag + new_url;
-        };
+        for (var i in classes) {
+            if (classes[i].indexOf('js__p_') !== -1) {
+                name = classes[i].replace("js__p_", "");
+                if ( !(name === "start") ) {
+                    popupName = name.replace("_start", "_popup");
+                }
+                break;
+            }
+        }
+        popup = $(".js__" + popupName);
+        routePopup = simplePopup.settings.hashtag + popupName;
 
         // Call when have event
         self.on(simplePopup.settings.event, function() {
@@ -97,4 +99,3 @@
 
   };
 })(jQuery);
-

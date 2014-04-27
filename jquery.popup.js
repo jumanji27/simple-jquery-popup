@@ -18,16 +18,27 @@
         var close = $(".js__p_close");
         var routePopup = simplePopup.settings.hashtag + simplePopup.settings.url;
 
-        var string = self[0].className;
-        var name = string.replace("js__p_", "");
+        var cssClasses = self[0].className;
+
+        if ( cssClasses.indexOf(" ") >= 0 ) {
+          cssClasses = cssClasses.split(" ");
+
+          for (key in cssClasses) {
+            if ( cssClasses[key].indexOf("js__p_") === 0 ) {
+              cssClasses = cssClasses[key]
+            }
+          };
+        }
+
+        var name = cssClasses.replace("js__p_", "");
 
         // We redefine the variables if there is an additional popap
-        if ( !(name === "start") ) {
-          var new_url = "another_popup";
+        if (name !== "start") {
+          var NEW_URL = "another_popup";
 
           name = name.replace("_start", "_popup");
           popup = $(".js__" + name);
-          routePopup = simplePopup.settings.hashtag + new_url;
+          routePopup = simplePopup.settings.hashtag + NEW_URL;
         };
 
         // Call when have event

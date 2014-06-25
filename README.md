@@ -6,4 +6,4 @@ for call:
       $(".js__p_start, .js__p_another_start").simplePopup();
     });
 
-[Demo](http://nazz.me/example/simple-jquery-popup/)
+[Demo](http://jumanji.name/example/simple-jquery-popup/)

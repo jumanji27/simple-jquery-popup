@@ -1,4 +1,4 @@
-﻿// Nikita Lebedev's blog, nazz.me/simple-jquery-popup
+﻿// Nikita Lebedev's blog, jumanji.name/simple-jquery-popup
 (function($) {
   $.fn.simplePopup = function(event) {
 

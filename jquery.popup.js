@@ -62,7 +62,6 @@
             simplePopup.hide(popup, body);
           }
         });
-
       },
 
       // Centering method
@@ -92,7 +91,6 @@
           simplePopup.show(popup, body, routePopup);
         }
       }
-
     };
 
     // In loop looking for what is called

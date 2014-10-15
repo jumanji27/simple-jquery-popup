@@ -1,9 +1,7 @@
 ﻿// Nikita Lebedev's blog, jumanji.name/simple-jquery-popup
 (function($) {
   $.fn.simplePopup = function(event) {
-
     var simplePopup = {
-
       settings: {
         hashtag: "#/",
         url: "popup",
@@ -12,7 +10,6 @@
 
       // Events
       initialize: function(self) {
-
         var popup = $(".js__popup");
         var body = $(".js__p_body");
         var close = $(".js__p_close");
@@ -20,11 +17,11 @@
 
         var cssClasses = self[0].className;
 
-        if ( cssClasses.indexOf(" ") >= 0 ) {
+        if (cssClasses.indexOf(" ") >= 0) {
           cssClasses = cssClasses.split(" ");
 
           for (key in cssClasses) {
-            if ( cssClasses[key].indexOf("js__p_") === 0 ) {
+            if (cssClasses[key].indexOf("js__p_") === 0) {
               cssClasses = cssClasses[key]
             }
           };
@@ -34,11 +31,9 @@
 
         // We redefine the variables if there is an additional popap
         if (name !== "start") {
-          var NEW_URL = "another_popup";
-
           name = name.replace("_start", "_popup");
           popup = $(".js__" + name);
-          routePopup = simplePopup.settings.hashtag + NEW_URL;
+          routePopup = simplePopup.settings.hashtag + name;
         };
 
         // Call when have event
@@ -105,7 +100,6 @@
       var self = $(this);
       simplePopup.initialize(self);
     });
-
   };
 })(jQuery);
 

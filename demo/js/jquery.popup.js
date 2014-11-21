@@ -1,5 +1,4 @@
-﻿// Nikita Lebedev's blog, jumanji.name/simple-jquery-popup
-(function($) {
+﻿(function($) {
   $.fn.simplePopup = function(event) {
     var simplePopup = {
       settings: {

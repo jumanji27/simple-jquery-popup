@@ -1,9 +1,10 @@
 {
   "name": "simplepopup",
   "description": "A lightweight and simple transition popup plugin",
+  "keywords": ["ui", "popup", "html5", "transition"],
   "version": "1.1.23",
   "author": "Nikita Lebedev <jumanji2277@gmail.com>",
-  "license": "Creative Commons BY-NC-ND 3.0",
+  "license": "CC-BY-NC-ND-3.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/jumanji27/simple-jquery-popup"

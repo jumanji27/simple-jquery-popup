@@ -5,9 +5,11 @@
     "ui",
     "popup",
     "html5",
-    "transition"
+    "transition",
+    "jquery-plugin",
+    "ecosystem:jquery"
   ],
-  "version": "1.1.24",
+  "version": "1.1.25",
   "author": "Nikita Lebedev <jumanji2277@gmail.com>",
   "license": "CC-BY-NC-ND-3.0",
   "repository": {

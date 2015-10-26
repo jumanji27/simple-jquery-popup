@@ -1,0 +1,8 @@
+{
+  "name": "simpe-jquery-popup",
+  "main": "jquery.popup.js",
+  "dependencies": {
+    "jquery": "1.3.2"
+  },
+  "ignore" : ["demo", "*.md", "simplepopup.jquery.json"]
+}

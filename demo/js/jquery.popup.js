@@ -7,7 +7,6 @@
         event: event || "click"
       },
 
-      // Events
       initialize: function(self) {
         var popup = $(".js__popup");
         var body = $(".js__p_body");
@@ -35,7 +34,6 @@
           routePopup = simplePopup.settings.hashtag + name;
         };
 
-        // Call when have event
         self.on(simplePopup.settings.event, function() {
           simplePopup.show(popup, body, routePopup);
           return false;
@@ -45,7 +43,6 @@
           simplePopup.hash(popup, body, routePopup);
         });
 
-        // Close
         body.on("click", function() {
           simplePopup.hide(popup, body);
         });
@@ -55,7 +52,6 @@
           return false;
         });
 
-        // Closure of the button "Esc"
         $(window).keyup(function(e) {
           if (e.keyCode === 27) {
             simplePopup.hide(popup, body);
@@ -63,13 +59,12 @@
         });
       },
 
-      // Centering method
+
       centering: function(self) {
         var marginLeft = -self.width()/2;
         return self.css("margin-left", marginLeft);
       },
 
-      // The overall function of the show
       show: function(popup, body, routePopup) {
         simplePopup.centering(popup);
         body.removeClass("js__fadeout");
@@ -77,14 +72,12 @@
         location.hash = routePopup;
       },
 
-      // The overall function of the hide
       hide: function(popup, body) {
         popup.addClass("js__slide_top");
         body.addClass("js__fadeout");
         location.hash = simplePopup.settings.hashtag;
       },
 
-      // Watch hash in URL
       hash: function(popup, body, routePopup) {
         if (location.hash === routePopup) {
           simplePopup.show(popup, body, routePopup);
@@ -92,11 +85,10 @@
       }
     };
 
-    // In loop looking for what is called
+
     return this.each(function() {
       var self = $(this);
       simplePopup.initialize(self);
     });
   };
 })(jQuery);
-

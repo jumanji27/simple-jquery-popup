@@ -7,13 +7,13 @@
         event: event || "click"
       },
 
-      initialize: function(self) {
+      initialize: function(link) {
         var popup = $(".js__popup");
         var body = $(".js__p_body");
         var close = $(".js__p_close");
         var routePopup = simplePopup.settings.hashtag + simplePopup.settings.url;
 
-        var cssClasses = self[0].className;
+        var cssClasses = link[0].className;
 
         if (cssClasses.indexOf(" ") >= 0) {
           cssClasses = cssClasses.split(" ");
@@ -34,7 +34,7 @@
           routePopup = simplePopup.settings.hashtag + name;
         };
 
-        self.on(simplePopup.settings.event, function() {
+        link.on(simplePopup.settings.event, function() {
           simplePopup.show(popup, body, routePopup);
           return false;
         });
@@ -60,9 +60,9 @@
       },
 
 
-      centering: function(self) {
-        var marginLeft = -self.width()/2;
-        return self.css("margin-left", marginLeft);
+      centering: function(popup) {
+        var marginLeft = -popup.width()/2;
+        return popup.css("margin-left", marginLeft);
       },
 
       show: function(popup, body, routePopup) {
@@ -87,8 +87,8 @@
 
 
     return this.each(function() {
-      var self = $(this);
-      simplePopup.initialize(self);
+      var link = $(this);
+      simplePopup.initialize(link);
     });
   };
 })(jQuery);

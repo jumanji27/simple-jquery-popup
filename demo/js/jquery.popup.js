@@ -68,12 +68,12 @@
       show: function(popup, body, routePopup) {
         simplePopup.centering(popup);
         body.removeClass("js_popup-body__fadeout");
-        popup.removeClass("js_popup-body__slide-top");
+        popup.removeClass("js_popup__slide-top");
         location.hash = routePopup;
       },
 
       hide: function(popup, body) {
-        popup.addClass("js_popup-body__slide-top");
+        popup.addClass("js_popup__slide-top");
         body.addClass("js_popup-body__fadeout");
         location.hash = simplePopup.settings.hashtag;
       },

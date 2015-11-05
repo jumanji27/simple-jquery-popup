@@ -8,9 +8,9 @@
       },
 
       initialize: function(link) {
-        var popup = $(".js__popup");
-        var body = $(".js__p_body");
-        var close = $(".js__p_close");
+        var popup = $(".js_popup");
+        var body = $(".js_popup-body");
+        var close = $(".js_popup__close");
         var routePopup = simplePopup.settings.hashtag + simplePopup.settings.url;
 
         var cssClasses = link[0].className;
@@ -19,18 +19,18 @@
           cssClasses = cssClasses.split(" ");
 
           for (key in cssClasses) {
-            if (cssClasses[key].indexOf("js__p_") === 0) {
+            if (cssClasses[key].indexOf("js_popup_") === 0) {
               cssClasses = cssClasses[key]
             }
           };
         }
 
-        var name = cssClasses.replace("js__p_", "");
+        var name = cssClasses.replace("js_popup_", "");
 
         // We redefine the variables if there is an additional popap
         if (name !== "start") {
-          name = name.replace("_start", "_popup");
-          popup = $(".js__" + name);
+          name = name.replace("__start", "__popup");
+          popup = $(".js_" + name);
           routePopup = simplePopup.settings.hashtag + name;
         };
 
@@ -67,14 +67,14 @@
 
       show: function(popup, body, routePopup) {
         simplePopup.centering(popup);
-        body.removeClass("js__fadeout");
-        popup.removeClass("js__slide_top");
+        body.removeClass("js_popup_fadeout");
+        popup.removeClass("js_popup_slide-top");
         location.hash = routePopup;
       },
 
       hide: function(popup, body) {
-        popup.addClass("js__slide_top");
-        body.addClass("js__fadeout");
+        popup.addClass("js_popup_slide-top");
+        body.addClass("js_popup_fadeout");
         location.hash = simplePopup.settings.hashtag;
       },
 

@@ -29,7 +29,7 @@
 
         // We redefine the variables if there is an additional popap
         if (name !== "start") {
-          name = name.replace("__start", "__popup");
+          name = name.replace("_start", "_popup");
           popup = $(".js_" + name);
           routePopup = simplePopup.settings.hashtag + name;
         };
@@ -67,14 +67,14 @@
 
       show: function(popup, body, routePopup) {
         simplePopup.centering(popup);
-        body.removeClass("js_popup_fadeout");
-        popup.removeClass("js_popup_slide-top");
+        body.removeClass("js_popup-body__fadeout");
+        popup.removeClass("js_popup-body__slide-top");
         location.hash = routePopup;
       },
 
       hide: function(popup, body) {
-        popup.addClass("js_popup_slide-top");
-        body.addClass("js_popup_fadeout");
+        popup.addClass("js_popup-body__slide-top");
+        body.addClass("js_popup-body__fadeout");
         location.hash = simplePopup.settings.hashtag;
       },
 

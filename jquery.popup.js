@@ -19,17 +19,17 @@
           cssClasses = cssClasses.split(" ");
 
           for (key in cssClasses) {
-            if (cssClasses[key].indexOf("js_popup_") === 0) {
+            if (cssClasses[key].indexOf("js_popup-") === 0) {
               cssClasses = cssClasses[key]
             }
           };
         }
 
-        var name = cssClasses.replace("js_popup_", "");
+        var name = cssClasses.replace("js_popup-", "");
 
         // We redefine the variables if there is an additional popap
         if (name !== "start") {
-          name = name.replace("_start", "_popup");
+          name = name.replace("-start", "-popup");
           popup = $(".js_" + name);
           routePopup = simplePopup.settings.hashtag + name;
         };

@@ -13,6 +13,8 @@
 
         var cssClasses = link[0].className;
 
+        link.addClass("js_popup-start_active");
+
         if (cssClasses.indexOf(" ") >= 0) {
           cssClasses = cssClasses.split(" ");
 
@@ -67,6 +69,7 @@
       hide: function(popup, body) {
         popup.addClass("js_popup__slide-top");
         body.addClass("js_popup-body__fadeout");
+        $(".js_popup-start_active").addClass("js_popup-start_active");
       }
     };
 

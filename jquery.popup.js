@@ -68,7 +68,7 @@
       hide: function(popup, body) {
         popup.addClass("js_popup__slide-top");
         body.addClass("js_popup-body__fadeout");
-        $(".js_popup-start_active").addClass("js_popup-start_active");
+        $(".js_popup-start_active").removeClass("js_popup-start_active");
       }
     };
 

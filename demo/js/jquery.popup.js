@@ -13,8 +13,6 @@
 
         var cssClasses = link[0].className;
 
-        link.addClass("js_popup-start_active");
-
         if (cssClasses.indexOf(" ") >= 0) {
           cssClasses = cssClasses.split(" ");
 
@@ -34,7 +32,7 @@
         };
 
         link.on(simplePopup.settings.event, function() {
-          simplePopup.show(popup, body);
+          simplePopup.show(popup, body, link);
           return false;
         });
 
@@ -60,10 +58,11 @@
         return popup.css("margin-left", marginLeft);
       },
 
-      show: function(popup, body) {
+      show: function(popup, body, link) {
         simplePopup.centering(popup);
         body.removeClass("js_popup-body__fadeout");
         popup.removeClass("js_popup__slide-top");
+        link.addClass("js_popup-start_active");
       },
 
       hide: function(popup, body) {
